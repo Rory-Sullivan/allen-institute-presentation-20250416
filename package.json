@@ -1,25 +1,20 @@
 {
-  "name": "reveal.js",
-  "version": "5.2.1",
-  "description": "The HTML Presentation Framework",
-  "homepage": "https://revealjs.com",
-  "subdomain": "revealjs",
+  "name": "allen-institute-presentation-20250416",
+  "version": "0.1.0",
+  "description": "Rory Sullivan Allen Institute presentation",
   "main": "dist/reveal.js",
   "module": "dist/reveal.esm.js",
-  "license": "MIT",
   "scripts": {
     "test": "gulp test",
     "start": "gulp serve",
     "build": "gulp build"
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "https://hakim.se"
+    "name": "Rory Sullivan"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "url": "https://github.com/Rory-Sullivan/allen-institute-presentation-20250416.git"
   },
   "engines": {
     "node": ">=18.0.0"
