@@ -1,40 +1,260 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>Rory Sullivan - Allen Institute presentation</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <!-- theme -->
+    <link rel="stylesheet" href="dist/theme/custom.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1 help</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Rory Sullivan</h1>
+          <h2>Allen Institute</h2>
+          <p><em>16 April 2025</em></p>
+        </section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+        <section>
+          <h2>About Me</h2>
+          <ul>
+            <li>Grew up in Ireland</li>
+            <li>Moved to Seattle 2 years ago</li>
+            <li>BSc Mathematics</li>
+            <li>Working as a software engineer for 4 years</li>
+            <li>TypeScript, C#, Python, SQL, Rust</li>
+            <li>Rock climbing, skiing</li>
+          </ul>
+        </section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+        <section>
+          <h2>What is ray tracing?</h2>
+          <div style="background-color: whitesmoke">
+            <img src="assets/ray_tracing_diagram.png" alt="" />
+          </div>
+          <aside class="notes">
+            <ul>
+              <li>Explain what ray tracing is</li>
+              <li>Emphasis on photorealism over performance</li>
+              <li>Opposed to rasterization</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>
+          <section>
+            <h2>Rust Ray Tracer</h2>
+            <ul>
+              <li>Passion project to build a ray tracer from scratch</li>
+              <li>Based on the 'Ray Tracing in One Weekend' series</li>
+              <li>Built with Rust</li>
+              <li>Does CPU ray tracing</li>
+            </ul>
+            <aside class="notes"></aside>
+          </section>
+
+          <section>
+            <h2>Rust Ray Tracer</h2>
+            <img
+              src="assets/rs_ray_tracer.png"
+              alt="Image from rust ray tracer"
+            />
+            <aside class="notes">
+              <ul>
+                <li>
+                  Dragon is the 'Stanford dragon' commonly used to test 3D
+                  graphics software
+                </li>
+                <li>Approx. 900,000 triangles</li>
+                <li>Uses a bounding volume hierarchy (BVH) for performance</li>
+                <li>Discuss things to note in image</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <h2>Bounding Volume Hierarchy</h2>
+          <div style="background-color: whitesmoke">
+            <img src="assets/example_bvh.png" alt="" />
+          </div>
+          <aside class="notes">
+            <ul>
+              <li>
+                Divides our triangles into a series of nested boxes, essentially
+                creating a binary tree
+              </li>
+              <li>
+                Instead of searching for a ray intersection over all triangles
+                we can simply walk the tree
+              </li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>
+          <h2>WebGL project</h2>
+          <a href="https://rory-sullivan.github.io/rs-webgl/">Link</a>
+          <aside class="notes">
+            <ul>
+              <li>
+                In preparation for these interviews made a quick WebGL project
+              </li>
+              <li>
+                It uses Three.js to recreate the same scene from my Rust ray
+                tracer project
+              </li>
+              <li>I did this in one weekend</li>
+              <li>This one we can interact with!</li>
+              <li>
+                Environment maps and how they were used to get reflections
+                working
+              </li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>
+          <div class="r-stretch r-vstack">
+            <img src="assets/rs_ray_tracer.png" />
+            <img src="assets/rs_webgl.png" />
+          </div>
+        </section>
+
+        <section>
+          <h2>Abbey Capital</h2>
+          <ul>
+            <li>Financial fund manager</li>
+            <li>Built internal tools</li>
+          </ul>
+        </section>
+
+        <section>
+          <section>
+            <h2>Atlas</h2>
+            <ul>
+              <li>
+                Complete re-build of the company's internal fund accounting app
+              </li>
+              <li>
+                C# ASP.NET backend, TypeScript React frontend, MySQL database
+              </li>
+              <li>Fully running in AWS</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Atlas</h2>
+            <ul>
+              <li>Specification</li>
+              <li>Design</li>
+              <li>Build</li>
+              <li>Parallel testing</li>
+              <li>Production</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>
+                  Specification: Spent many months, working on the
+                  specification. Used a tool called Balsamiq. I was only lightly
+                  involved at this stage.
+                </li>
+                <li>
+                  Design: Researched options and decided what architecture we
+                  were going to use. Largely created by me.
+                </li>
+                <li>
+                  Build: I was super involved. Gradually brought on user testing
+                  during this process. Iterative workflow with user feedback.
+                  <ul>
+                    <li>Setup the CI/CD pipeline</li>
+                    <li>Setup the C# and React projects</li>
+                    <li>
+                      Built the event system that keeps frontend up to date in
+                      real-time using web sockets (SignalR)
+                    </li>
+                    <li>Built re-usable components for the frontend</li>
+                    <li>Built several frontend screens</li>
+                  </ul>
+                </li>
+                <li>
+                  Parallel testing: testing against the old system. Full scale
+                  user testing. Lots of bug fixes and minor changes.
+                </li>
+                <li>
+                  Production: turn off the old system and rely entirely on the
+                  new system.
+                </li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h2>Atlas</h2>
+            <ul>
+              <li>x20 improvement in core calculations (20mins to 1min)</li>
+              <li>
+                Greatly improved UI
+                <ul>
+                  <li>Modern UI design</li>
+                  <li>Real-time updates</li>
+                  <li>Automatically highlight problems</li>
+                  <li>Easy filtering and searching</li>
+                  <li>New dashboards with charts</li>
+                </ul>
+              </li>
+              <li>
+                Colloquially users greatly preferred the new system and it sped
+                up their work
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>Dry Rock</h2>
+          <a href="https://dryrock.ie/pages/washington_imperial.html">Link</a>
+          <aside class="notes">
+            <ul>
+              <li>
+                Weather application I built for myself to find places to go rock
+                climbing
+              </li>
+              <li>Intuitive design (at least to me)</li>
+              <li>High density</li>
+              <li>Highlight multiple ways to close detailed day modal</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>Closing remarks and Q&A</section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
+      });
+    </script>
+  </body>
 </html>
