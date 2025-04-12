@@ -3,11 +3,27 @@
 ## Introduction
 Hi my name is Rory. I'm from Ireland originally, I've been in Seattle just over
 2 years now. I did an undergraduate degree in mathematics. This is where I first
-started programming. After college I taught myself how to write code. I've now
-been working as a software engineer for the last 4 years mostly in full stack
-web development. The main languages I've worked with over the years are
+dabbled in programming. After college I taught myself how to write code. I've
+now been working as a software engineer for the last 4 years mostly in full
+stack web development. The main languages I've worked with over the years are
 TypeScript, C#, Python, SQL, and Rust. My other hobbies include rock climbing
 and skiing.
+
+## Abbey Capital
+My last job was at a company called Abbey Capital. They are a financial fund
+manager, while I was there I was building and maintaining internal tooling for
+the company.
+
+## Atlas
+The main project I worked on at Abbey was called Atlas. It was a full re-build
+of their internal fund accounting application. It was a web application built
+with a React TypeScript frontend, C# and ASP.NET on the backend, and a MySQL
+database. All running on AWS.
+
+I was part of a small team working on this project, there were just two of us
+initially so I got my hands dirty in a lot of different areas on this project.
+
+**Any questions?**
 
 ## What is ray tracing?
 The first project I am going to be talking about today is a ray tracing engine.
@@ -57,11 +73,11 @@ simulating a camera shutter.
 ### Bounding volume hierarchy
 Something I thought was particularly interesting in this project that I want to
 talk about is bounding volume hierarchies, which is a performance optimization
-that is applied to our intersection search.
+that is applied to our intersection search. **Improve this wording??**
 
 As I mentioned before this dragon has just under 900,000 triangles in it. That
 is a lot of triangles to test for an intersection for every ray that we send out
-and would take a long time.  So what we do instead it break the triangles into
+and would take a long time. So what we do instead is break the triangles into
 boxes so that we can test multiple triangles at the same time.
 
 **Move to BVH slide**
@@ -77,3 +93,9 @@ In this case we have 6 objects, now instead of testing all 6 objects for an
 intersection we only have to do at most 4 intersection tests. In the case of our
 dragon instead of 900,000 tests we only have to do at most 21. This scales very
 well with larger triangle counts.
+
+
+### Notes
+Theme: Why is this going to help me in this job!
+
+Why am I interested in graphics.
