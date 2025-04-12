@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
-    <!-- theme -->
+    <!-- Theme -->
     <link rel="stylesheet" href="dist/theme/custom.css" />
 
     <!-- Theme used for syntax highlighted code -->
@@ -22,12 +22,16 @@
       <div class="slides">
         <section>
           <h1>Rory Sullivan</h1>
+          <hr />
+          <h2>Software Engineer II – Connectomics Visualization</h2>
+          <hr />
           <h2>Allen Institute</h2>
           <p><em>16 April 2025</em></p>
         </section>
 
         <section>
           <h2>About Me</h2>
+          <!-- TODO: Add picture of myself and maybe logos of programming languages -->
           <ul>
             <li>From Ireland</li>
             <li>Moved to Seattle 2 years ago</li>
@@ -39,105 +43,14 @@
         </section>
 
         <section>
-          <h2>What is ray tracing?</h2>
-          <div style="background-color: whitesmoke">
-            <img src="assets/ray_tracing_diagram.png" alt="" />
-          </div>
-          <aside class="notes">
-            <ul>
-              <li>Explain what ray tracing is</li>
-              <li>Emphasis on photorealism over performance</li>
-              <li>Opposed to rasterization</li>
-            </ul>
-          </aside>
-        </section>
-
-        <section>
-          <section>
-            <h2>Rust Ray Tracer</h2>
-            <ul>
-              <li>Passion project to build a ray tracer from scratch</li>
-              <li>Based on the 'Ray Tracing in One Weekend' series</li>
-              <li>Built with Rust</li>
-              <li>Does CPU ray tracing</li>
-            </ul>
-            <aside class="notes"></aside>
-          </section>
-
-          <section>
-            <h2>Rust Ray Tracer</h2>
-            <img
-              src="assets/rs_ray_tracer.png"
-              alt="Image from rust ray tracer"
-            />
-            <aside class="notes">
-              <ul>
-                <li>
-                  Dragon is the 'Stanford dragon' commonly used to test 3D
-                  graphics software
-                </li>
-                <li>Approx. 900,000 triangles</li>
-                <li>Uses a bounding volume hierarchy (BVH) for performance</li>
-                <li>Discuss things to note in image</li>
-              </ul>
-            </aside>
-          </section>
-        </section>
-
-        <section>
-          <h2>Bounding Volume Hierarchy</h2>
-          <div style="background-color: whitesmoke">
-            <img src="assets/example_bvh.png" alt="" />
-          </div>
-          <aside class="notes">
-            <ul>
-              <li>
-                Divides our triangles into a series of nested boxes, essentially
-                creating a binary tree
-              </li>
-              <li>
-                Instead of searching for a ray intersection over all triangles
-                we can simply walk the tree
-              </li>
-            </ul>
-          </aside>
-        </section>
-
-        <section>
-          <h2>WebGL project</h2>
-          <a href="https://rory-sullivan.github.io/rs-webgl/">Link</a>
-          <aside class="notes">
-            <ul>
-              <li>
-                In preparation for these interviews made a quick WebGL project
-              </li>
-              <li>
-                It uses Three.js to recreate the same scene from my Rust ray
-                tracer project
-              </li>
-              <li>I did this in one weekend</li>
-              <li>This one we can interact with!</li>
-              <li>
-                Environment maps and how they were used to get reflections
-                working
-              </li>
-            </ul>
-          </aside>
-        </section>
-
-        <section>
-          <div class="r-stretch r-vstack">
-            <img src="assets/rs_ray_tracer.png" />
-            <img src="assets/rs_webgl.png" />
-          </div>
-        </section>
-
-        <section>
           <h2>Abbey Capital</h2>
-          <ul>
-            <li>Financial fund manager</li>
-            <li>Built internal tools</li>
-          </ul>
+          <div class="r-hstack">
+            <ul style="padding-right: 1rem">
+              <li>Financial fund manager</li>
+              <li>Built internal tools</li>
+            </ul>
+            <img src="assets/abbey_capital_limited_logo.jpg" />
+          </div>
         </section>
 
         <section>
@@ -148,11 +61,12 @@
                 Complete re-build of the company's internal fund accounting app
               </li>
               <li>
-                C# ASP.NET backend, TypeScript React frontend, MySQL database
+                TypeScript React frontend, C# ASP.NET backend, MySQL database
               </li>
               <li>Fully running in AWS</li>
             </ul>
           </section>
+
           <section>
             <h2>Atlas</h2>
             <ul>
@@ -198,7 +112,9 @@
               </ul>
             </aside>
           </section>
+
           <section>
+            <!-- TODO: Improve this slide, make it more concise or break it into multiple slides -->
             <h2>Atlas</h2>
             <ul>
               <li>x20 improvement in core calculations (20mins to 1min)</li>
@@ -221,19 +137,133 @@
         </section>
 
         <section>
-          <h2>Dry Rock</h2>
-          <a href="https://dryrock.ie/pages/washington_imperial.html">Link</a>
+          <section>
+            <h2>Rust Ray Tracer</h2>
+            <ul>
+              <li>Passion project to build a ray tracer from scratch</li>
+              <li>Based on the 'Ray Tracing in One Weekend' series</li>
+              <li>Built with Rust</li>
+              <li>Does CPU ray tracing</li>
+            </ul>
+            <aside class="notes"></aside>
+          </section>
+
+          <section>
+            <h2>What is ray tracing?</h2>
+            <div class="r-stretch" style="background-color: whitesmoke">
+              <img src="assets/ray_tracing_diagram.png" alt="" />
+            </div>
+            <small>
+              Source:
+              <cite>
+                <a
+                  href="https://commons.wikimedia.org/wiki/File:Ray_trace_diagram.svg"
+                  >Wikimedia - Ray_trace_diagram.svg</a
+                >
+              </cite>
+            </small>
+            <aside class="notes">
+              <ul>
+                <li>Explain what ray tracing is</li>
+                <li>Emphasis on photorealism over performance</li>
+                <li>Opposed to rasterization</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h2>Rust Ray Tracer</h2>
+            <img
+              src="assets/rs_ray_tracer.png"
+              alt="Image from rust ray tracer"
+            />
+            <aside class="notes">
+              <ul>
+                <li>
+                  Dragon is the 'Stanford dragon' commonly used to test 3D
+                  graphics software
+                </li>
+                <li>Approx. 900,000 triangles</li>
+                <li>Uses a bounding volume hierarchy (BVH) for performance</li>
+                <li>Discuss things to note in image</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h2>Bounding Volume Hierarchy</h2>
+            <!-- TODO: Make diagram incremental as we go through it -->
+            <div style="background-color: whitesmoke; display: inline-block">
+              <img src="assets/example_bvh.png" alt="" />
+            </div>
+            <small>
+              Source:
+              <cite>
+                <a
+                  href="https://commons.wikimedia.org/wiki/File:Example_of_bounding_volume_hierarchy.svg"
+                  >Wikimedia - Example_of_bounding_volume_hierarchy.svg</a
+                >
+              </cite>
+            </small>
+            <aside class="notes">
+              <ul>
+                <li>
+                  Divides our triangles into a series of nested boxes,
+                  essentially creating a binary tree
+                </li>
+                <li>
+                  Instead of searching for a ray intersection over all triangles
+                  we can simply walk the tree
+                </li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <h2>WebGL project</h2>
+          <a href="https://rory-sullivan.github.io/rs-webgl/">Link</a>
           <aside class="notes">
             <ul>
               <li>
-                Weather application I built for myself to find places to go rock
-                climbing
+                In preparation for these interviews made a quick WebGL project
               </li>
-              <li>Intuitive design (at least to me)</li>
-              <li>High density</li>
-              <li>Highlight multiple ways to close detailed day modal</li>
+              <li>
+                It uses Three.js to recreate the same scene from my Rust ray
+                tracer project
+              </li>
+              <li>I did this in one weekend</li>
+              <li>This one we can interact with!</li>
+              <li>
+                Environment maps and how they were used to get reflections
+                working
+              </li>
             </ul>
           </aside>
+        </section>
+
+        <section>
+          <section>
+            <h2>Open Source Work</h2>
+          </section>
+
+          <section>
+            <h2>Dry Rock</h2>
+            <a href="https://dryrock.ie/pages/washington_imperial.html">Link</a>
+            <aside class="notes">
+              <ul>
+                <li>
+                  Weather application I built for myself to find places to go
+                  rock climbing
+                </li>
+                <li>Intuitive design (at least to me)</li>
+                <li>High density</li>
+                <li>Highlight multiple ways to close detailed day modal</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Avy - NWAC</h2>
+          </section>
         </section>
 
         <section>Closing remarks and Q&A</section>
