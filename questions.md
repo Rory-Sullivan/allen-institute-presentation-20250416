@@ -2,3 +2,4 @@
 
 - What is the format of the presentation? Am I standing, sitting, etc.
 - Who is attending the presentation?
+- What kind of start date would we be talking about?
