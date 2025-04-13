@@ -50,7 +50,7 @@ The main things I contributed to this project are:
 - I built the event system that automatically propagated data changes
 - I built the real-time system that kept the frontend up to date using web
   sockets (SignalR)
-- I built re-usable components for the frontend. Several screens looked very
+- I built reusable components for the frontend. Several screens looked very
   similar so these components were used across all of them to keep the user
   experience consistent.
 
