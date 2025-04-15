@@ -1,3 +1,10 @@
+## Beforehand
+
+- Setup all tabs
+  - WebGL
+  - Dry Rock
+- Relax
+
 # Presentation
 
 Hi, slides for this talk are available at this URL or via this QR code. For
@@ -31,7 +38,7 @@ on over the years.
 ## Abbey Capital
 My previous job was at a company called Abbey Capital. They are a financial fund
 manager, in other words they manage large sums of other people's money, deciding
-on the best way to invest that money. They specialised in 'alternative
+on the best way to invest that money. They specialise in 'alternative
 investments'. In their case mostly futures contracts, and other derivatives
 based on the value of physical commodities.
 
@@ -56,9 +63,9 @@ lot from sitting with them and watching them use the software.
 
 **Next slide**
 
-### Functionality
+### Atlas - functionality
 The primary function of Atlas was to calculate daily profit and loss for the
-funds Abbey managed. At also compared this data to various third parties to
+funds Abbey managed. It also compared this data to various third parties to
 ensure their systems were up to scratch. If it found any discrepancies it would
 flag this for a user to follow up with.
 
@@ -70,7 +77,7 @@ about 7bn dollars in assets.
 
 **Next slide**
 
-### Atlas architecture
+### Atlas - architecture
 Just to give a little more perspective on this I have a quick diagram of the
 architecture. Unfortunately I cannot actually show you the application as it is
 all proprietary.
@@ -83,7 +90,7 @@ The backend server did most of the work for this application; serving the
 frontend UI, running calculations on data, pushing real-time updates to users,
 and communicating with other services.
 
-**Next slide**
+**Show next step**
 
 On that note, I should point out that Atlas was part of a larger set of
 distributed services. It interacted with other services that we built like the
@@ -93,6 +100,7 @@ shelf AWS components.
 
 **Next slide**
 
+### Atlas - project structure
 The project was split into five main parts:
 - **Specification:** During specification we spent several months working with
   users, to see what they were expecting from the project. Since we were
@@ -113,9 +121,9 @@ The project was split into five main parts:
   actually wanted.
 - **Parallel testing:** After the main features were built we entered a period
   of parallel testing. During this time we were running the new system in
-  parallel with the old one, validating our calculations. As this was a financial
-  application that would eventually send data to clients a high degree of
-  certainty in the data was required. We also started with full scale user
+  parallel with the old one, validating our calculations. As this was a
+  financial application that would eventually send data to clients a high degree
+  of certainty in the data was required. We also started with full scale user
   testing bringing on feedback from more people on the team. Of course this led
   to many bug fixes and some minor changes.
 - **Production:** Finally after we were satisfied with our system we turned off
@@ -123,26 +131,27 @@ The project was split into five main parts:
 
 **Next slide**
 
-### User feedback
+### Atlas - user feedback
 As you can imagine we received a lot of feedback from users during this project
 and this has greatly influenced how I think about designing software. For the
 most part the feedback we received on features was relatively obvious and easily
 resolved. There were two things however that have really stuck with me from this
 time, mostly because of how much controversy and discourse they stirred up.
 
-Firstly, pie charts. One senior member of the team was very much pro using pie
-charts extensively while some other people were vehemently against using them.
+**Show next step**. Firstly, pie charts. One senior member of the team was very
+much pro using pie charts extensively while some other people were vehemently
+against them.
 
 This led to a whole discussion on the pros and cons of pie charts and when to
 use them. In the end we settled on using them sparingly throughout the
 application in places where they really made sense. Fortunately this discussion
-came up during the specification phase rather than at build  so I didn't have go
+came up during the specification phase rather than at build so I didn't have go
 around re-writing any code. This was a big bonus of having visual references in
 the specification.
 
-The second one is how to align numbers in a table. The application made
-extensive use of tabulated data and one time, in a user review, I was asked "why
-are all the numbers right aligned, they should be centred".
+**Show next step**, the second one is how to align numbers in a table. The
+application made extensive use of tabulated data and one time, in a user review,
+I was asked "why are all the numbers right aligned, they should be centred".
 
 **Show next step**, In other words why was I doing this, I should be doing this.
 
@@ -158,22 +167,23 @@ your users are going to be using the application every day. Though I still think
 it is important to have sensible defaults so that new users can get up and
 running quickly.
 
-There are really no right or wrong answers when it comes to UI design so you
+There are really no right or wrong answers when it comes to UI design. So you
 should get your designs in front of users as early as possible to get their
 feedback.
 
 Everyone will give you feedback on a design, even if they don't actually use the
-application (this often includes developers of an application). You should
-prioritize actual users over others where appropriate.
+application (this often includes the developers of the application). So you
+should prioritize actual users over others where appropriate.
 
 **Next slide**
 
-### My contributions:
-The main things I contributed to this project are:
+### Atlas - my contributions
+The main things I contributed to the Atlas project are:
 - I setup the continuous integration/continuous deployment pipeline. This
   allowed us to quickly and easily integrate changes and release them to users.
 - I setup the C# and React projects and integrated them so they would work
-  together.
+  together both in development and production. Making the developer experience
+  of the application seamless.
 - I built the event system that automatically propagated data changes. This  was
   one the most difficult technical challenges of the project as it involved
   building a custom queuing and event handling system.
@@ -185,7 +195,7 @@ The main things I contributed to this project are:
 
 **Next slide**
 
-### Results
+### Atlas - results
 The Atlas project was a great success.
 
 - We made a 20x performance improvement to the core calculation engine, going
@@ -194,12 +204,12 @@ The Atlas project was a great success.
   work with.
 - We now had real-time updates that synchronised across all users. Previously
   they would have to manually trigger the calculations and then wait 20 mins and
-  re-fresh their screens to get the changes.
+  then re-fresh their screens to get the changes.
 - Most importantly we saved our users time and made their jobs easier.
 
 **Next slide**
 
-### Why is this relevant?
+### Atlas - why is this relevant?
 So why is this relevant to what I will be doing at the Allen Institute?
 
 This project gave me invaluable experience in delivering a technical software
@@ -220,13 +230,13 @@ design.
 **Next slide**
 
 ## Rust ray tracer
-Now we get to talk about a more interesting, albeit less useful, project that I
+Now we get to talk about a more interesting, albeit less useful project that I
 built. This was a passion project to build a ray tracing engine from scratch.
 
 I've always been interested 3D graphics, mostly thanks to video games but I
 became interested in ray tracing in particular when I took a module all about
-the math behind them in college. To me it was a fun blend of math, physics, and
-computers, all of which are I am interested in.
+the math behind it in college. To me it was a fun blend of math, physics, and
+computers, all of which are I am very interested in.
 
 Later when I was learning Rust (a new programming language) I was looking for a
 good compute intensive project to test my skills and ray tracing seemed like a
@@ -247,10 +257,11 @@ sending out rays from a camera for each pixel on the screen. These rays then
 bounce off objects, sometimes multiple times, before eventually ending at a
 light source (or not).
 
-As we can see in the diagram a ray coming from one of these two pixels will
+**Describe diagram**.
+(As we can see in the diagram a ray coming from one of these two pixels will
 scatter off the ball and hit the light. Other rays coming from this pixel will
 scatter off the ground and be blocked from reaching the light source by the ball
-creating a shadow in the image.
+creating a shadow in the image.)
 
 Typically multiple rays are sent per pixel all scattering in different
 directions. You can imagine that of the rays being scattered off this ball only
@@ -262,12 +273,13 @@ a light source creating complex interactions in the image.
 
 Ray tracing is very computationally intensive compared to other methods of
 rendering an image like rasterization. It prioritizes image quality over speed.
-Ray tracing is able to produce photorealistic images, it is commonly used in CGI
-and visual effects, and sometimes even in video games.
+Ray tracing is able to produce photorealistic images. Thus it is commonly used
+in CGI and visual effects, and sometimes even in video games, though it is often
+mixed with other techniques for performance reasons in that case.
 
 **Next slide**
 
-### Show the image
+### Ray tracer image
 So this is an image produced by my ray tracer. The dragon you see in the middle
 is the 'Stanford dragon' which is a common 3D model that is used to test 3D
 software. It has about 900,000 triangles.
@@ -282,31 +294,9 @@ around it.
 
 We also have a moving ball over here which exhibits motion blur.
 
-### Bounding volume hierarchy
-Something I thought was particularly interesting in this project that I want to
-talk about is bounding volume hierarchies, which is a performance optimization
-that is applied to our intersection search. **Improve this wording??**
-
-As I mentioned before this dragon has just under 900,000 triangles in it. That
-is a lot of triangles to test for an intersection for every ray that we send out
-and would take a long time. So what we do instead is break the triangles into
-boxes so that we can test multiple triangles at the same time.
-
 **Next slide**
 
-Here we can see how this is done. We enclose all of our objects in a box. We can
-then easily test if a our ray intersects with the box, if it doesn't then we
-know it does not intersect with any of the objects in the box. If it does then
-we keep going. We divide the objects in the box into two smaller boxes and test
-for intersection with each of those boxes and so on. This gives us the tree like
-structure that you can see here.
-
-In this case we have 6 objects, now instead of testing all 6 objects for an
-intersection we only have to do at most 4 intersection tests. In the case of our
-dragon instead of 900,000 tests we only have to do at most 21. So this scales
-very well with larger triangle counts.
-
-**Next slide**
+**Move to WebGL tab**
 
 ## WebGL project
 The next project I want to talk about is somewhat related. When I found out
@@ -326,14 +316,11 @@ are wrapping the image of the earth on this other ball to make a globe.
 
 This technique has it's limitations however. Notice the glass ball no longer
 looks very realistic, this is because we are no longer actually simulating
-refraction just making the sphere transparent with some distortion.
+refraction of light just making the sphere transparent with some distortion.
 
 Also notice the green reflections on the roof of the dragon's mouth, these
 should be blocked by the lower jaw but this is not taken into account in this
 simple environment map.
-
-For this project I was able to take my existing skill sets and complete it in
-one weekend, about a day and half to be precise.
 
 This project came together really quickly, I was able to complete it in just a
 weekend. I attribute this to the skills that I learnt while building the ray
@@ -366,6 +353,8 @@ that has really drawn me to the institute.
 
 **Next slide**
 
+**Move to Dry Rock tab**
+
 ### Dry Rock
 Dry Rock is an open source project I started about 5 years ago. It is a weather
 website for rock climbers. The main problem it is trying to solve is "where
@@ -391,17 +380,20 @@ received about it is simply to add more places. When people want more of
 something I generally take that to mean it's doing a good job.
 
 Something I have added to this recently, which I think demonstrates some of the
-things I have learnt since I first started this project, is having multiple ways to do the same thing. One such example of this is when I open this detailed view there are in fact three different ways of closing it.
+things I have learnt since I first started this project, is having multiple ways
+to do the same thing. One such example of this is when I open this detailed view
+there are in fact three different ways of closing it.
 - I can click this button
 - I can click anywhere on the screen that is not part of the modal
 - I can also hit the back button
 
 Now no matter what an individual user thinks is the most intuitive it should
-work for them. This is an example of building flexible user interfaces that I referred to earlier.
+work for them. This is an example of building flexible user interfaces that I
+referred to earlier.
 
 **Next slide**
 
-### Avy
+### NWAC - Avy
 I have also been volunteering for the Northwest Avalanche Center since January,
 helping them maintain their Avy app. The app provides avalanche forecasts and
 weather data from various avalanche centers in the US. It is used by thousands
@@ -414,7 +406,7 @@ organisation that is trying to keep us all safe in the mountains.
 So far I have mostly been fixing bugs, especially on the Android app, as the
 rest of the team mostly uses iPhones. This is my first experience working on a
 mobile app, but it's been great getting to dabble in this area. As the app is
-mostly built using TypeScript my skills have transferred over well.
+mostly built using TypeScript I have been able to pick it up quickly.
 
 **Any questions before I move on?**
 
@@ -435,16 +427,14 @@ interested in 3D graphics and the opportunity to work in that space
 professionally is not one that I could turn down.
 
 A little story to finish off my talk. A few years ago when I was applying for my
-first job as a software engineer, my girlfriend, now wife, was doing her
+first job as a software engineer, my then girlfriend, now wife, was doing her
 master's degree in neuroscience and showed me the Allen Brain Atlas (which she
 was using in her project). I remember playing with the 3D visualisations of the
 atlas and thinking how cool it would be to create software like that, something
-that was totally unthinkable to me at that time. Looking back on this time now I
-have come a long way and hope to make this a reality.
+that was totally unthinkable to me at that time. Looking back on this now I have
+come a long way and hope to make this a reality.
 
 **Next slide**
 
 ## Questions?
-Any more questions for me before we finish up here.
-
-### Notes
+Thank you for your time, any more questions for me before we finish up here.
