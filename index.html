@@ -16,6 +16,19 @@
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Custom controls plugin is used to for opening and closing the chalk board modes. -->
+    <link rel="stylesheet" href="plugin/customControls/customControls.css" />
+
+    <!-- Chalkboard plugin -->
+    <link rel="stylesheet" href="plugin/chalkboard/chalkboard.css" />
   </head>
   <body>
     <div class="reveal">
@@ -390,15 +403,38 @@
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
     <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/customControls/customControls.js"></script>
+    <script src="plugin/chalkboard/chalkboard.js"></script>
     <script>
       // More info about initialization & config:
       // - https://revealjs.com/initialization/
       // - https://revealjs.com/config/
       Reveal.initialize({
         hash: true,
+        customControls: {
+          controls: [
+            {
+              icon: '<i class="fa fa-pen-square"></i>',
+              title: 'Toggle chalkboard (B)',
+              action: 'RevealChalkboard.toggleChalkboard();',
+            },
+            {
+              icon: '<i class="fa fa-pen"></i>',
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();',
+            },
+          ],
+        },
 
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealZoom,
+          RevealChalkboard,
+          RevealCustomControls,
+        ],
       });
     </script>
   </body>
